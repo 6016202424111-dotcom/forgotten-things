@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>忘れ物アラーム</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon-192.png" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<meta name="theme-color" content="#1F2937" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div>
+      <div class="clock-label">今の時刻</div>
+      <div class="clock" id="clock">--:--</div>
+    </div>
+    <div class="bell-badge">🔔</div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="install-banner" id="installBanner">
+    このアプリはホーム画面に追加できます。ブラウザのメニューから「ホーム画面に追加」を選んでください。
+  </div>
+
+  <div class="save-error" id="saveError">保存に失敗しました。もう一度お試しください。</div>
+
+  <div id="firingArea"></div>
+
+  <div id="listArea"></div>
+
+  <button class="add-toggle" id="addToggleBtn">＋ アラームを追加</button>
+
+  <div class="add-form" id="addForm">
+    <div class="form-header">
+      <div class="title">新しいアラームを登録</div>
+      <button id="closeFormBtn">✕</button>
+    </div>
+    <label class="field-label">忘れそうなもの</label>
+    <input type="text" id="nameInput" placeholder="例）数学の宿題プリント" />
+    <div class="row-2">
+      <div>
+        <label class="field-label">知らせる時刻</label>
+        <input type="time" id="timeInput" value="07:30" />
+      </div>
+      <div>
+        <label class="field-label">くり返し</label>
+        <select id="repeatInput">
+          <option value="daily">毎日</option>
+          <option value="once">今日だけ</option>
+        </select>
+      </div>
+    </div>
+    <button class="submit-btn" id="submitBtn">登録する</button>
+  </div>
+
+  <div class="footnote">
+    ※ ホーム画面に追加してこのアプリを起動している間は通知されます。ただし画面をロックしたり、
+    ほかのアプリを長時間使っていたりすると、OSの制限により鳴らないことがあります。
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
